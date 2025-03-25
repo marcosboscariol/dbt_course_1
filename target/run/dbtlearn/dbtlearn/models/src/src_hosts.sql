@@ -9,8 +9,8 @@
 		test.raw_hosts rh 
 )
 SELECT
-	id AS review_id,
-	name AS review_name,
+	id AS host_id,
+	name AS host_name,
 	is_superhost,
 	created_at,
 	updated_at

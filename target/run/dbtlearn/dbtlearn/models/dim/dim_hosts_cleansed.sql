@@ -15,11 +15,11 @@
         "inttegra_stage"."test"."src_hosts"
 )
 SELECT
-    review_id,
+    host_id,
 	CASE 
-        WHEN review_name = '' THEN 'Anonymous' 
-        ELSE  review_name
-    END AS review_name,
+        WHEN host_name = '' THEN 'Anonymous' 
+        ELSE  host_name
+    END AS host_name,
 	is_superhost,
 	created_at,
 	updated_at
