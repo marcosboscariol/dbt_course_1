@@ -1,0 +1,29 @@
+[0m23:30:18.177957 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EE977EF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EC5F3800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EC520DD0>]}
+
+
+============================== 23:30:18.183958 | f598d1bd-3815-4c39-a336-34d5abe6bc9b ==============================
+[0m23:30:18.183958 [info ] [MainThread]: Running with dbt=1.9.3
+[0m23:30:18.185432 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\marco\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt init dbtlearn', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:30:18.220035 [debug] [MainThread]: Starter project path: C:\Users\marco\OneDrive\Documentos\triade\dbt_course_1\venv\Lib\site-packages\dbt\include\starter_project
+[0m23:30:18.268459 [info ] [MainThread]: 
+Your new dbt project "dbtlearn" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:30:18.269463 [info ] [MainThread]: Setting up your profile.
+[0m23:33:32.341961 [info ] [MainThread]: Profile dbtlearn written to C:\Users\marco\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m23:33:32.343959 [debug] [MainThread]: Command `dbt init` succeeded at 23:33:32.343959 after 194.36 seconds
+[0m23:33:32.343959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EF0D9AF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EE207D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000283EF3F7950>]}
+[0m23:33:32.344965 [debug] [MainThread]: Flushing usage events
+[0m23:33:33.277981 [debug] [MainThread]: An error was encountered while trying to flush usage events
