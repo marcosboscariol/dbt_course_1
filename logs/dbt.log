@@ -13055,3 +13055,368 @@ drop table if exists "inttegra_stage"."test"."mart_fullmoon_reviews__dbt_backup"
 [0m14:02:54.060686 [debug] [MainThread]: Command `dbt run` succeeded at 14:02:54.059685 after 9.96 seconds
 [0m14:02:54.060686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F26F271010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F275D4EAD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F26F56EF90>]}
 [0m14:02:54.061684 [debug] [MainThread]: Flushing usage events
+[0m14:03:56.226594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1E741050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1EEF07D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1E741AD0>]}
+
+
+============================== 14:03:56.230592 | a999e460-d347-464b-b485-6dbbe4f46da3 ==============================
+[0m14:03:56.230592 [info ] [MainThread]: Running with dbt=1.7.3
+[0m14:03:56.231591 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\marco\\.dbt', 'log_path': 'C:\\Users\\marco\\OneDrive\\Documentos\\triade\\dbt_course_1\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt compile', 'send_anonymous_usage_stats': 'True'}
+[0m14:03:56.537784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a999e460-d347-464b-b485-6dbbe4f46da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1F0FABD0>]}
+[0m14:03:56.642431 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a999e460-d347-464b-b485-6dbbe4f46da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1F101810>]}
+[0m14:03:56.643437 [info ] [MainThread]: Registered adapter: postgres=1.7.3
+[0m14:03:56.653318 [debug] [MainThread]: checksum: c95636796e12235e48c0560a0bb6a50e98827ef72e7ea1fe07a97c38c91661e1, vars: {}, profile: , target: , version: 1.7.3
+[0m14:03:56.817737 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:03:56.818770 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:03:56.828185 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a999e460-d347-464b-b485-6dbbe4f46da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1F0C3190>]}
+[0m14:03:56.898876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a999e460-d347-464b-b485-6dbbe4f46da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1F227350>]}
+[0m14:03:56.899412 [info ] [MainThread]: Found 8 models, 1 seed, 3 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m14:03:56.900481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a999e460-d347-464b-b485-6dbbe4f46da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1EF10E50>]}
+[0m14:03:56.902597 [info ] [MainThread]: 
+[0m14:03:56.904177 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:03:56.906783 [debug] [ThreadPool]: Acquiring new postgres connection 'list_inttegra_stage_test'
+[0m14:03:56.924726 [debug] [ThreadPool]: Using postgres connection "list_inttegra_stage_test"
+[0m14:03:56.925713 [debug] [ThreadPool]: On list_inttegra_stage_test: BEGIN
+[0m14:03:56.926994 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:03:58.252603 [debug] [ThreadPool]: SQL status: BEGIN in 1.0 seconds
+[0m14:03:58.253609 [debug] [ThreadPool]: Using postgres connection "list_inttegra_stage_test"
+[0m14:03:58.253609 [debug] [ThreadPool]: On list_inttegra_stage_test: /* {"app": "dbt", "dbt_version": "1.7.3", "profile_name": "dbtlearn", "target_name": "dev", "connection_name": "list_inttegra_stage_test"} */
+select
+      'inttegra_stage' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'test'
+    union all
+    select
+      'inttegra_stage' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'test'
+    union all
+    select
+      'inttegra_stage' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'test'
+  
+[0m14:03:58.302801 [debug] [ThreadPool]: SQL status: SELECT 12 in 0.0 seconds
+[0m14:03:58.305813 [debug] [ThreadPool]: On list_inttegra_stage_test: ROLLBACK
+[0m14:03:58.340474 [debug] [ThreadPool]: On list_inttegra_stage_test: Close
+[0m14:03:58.351821 [debug] [MainThread]: Using postgres connection "master"
+[0m14:03:58.352823 [debug] [MainThread]: On master: BEGIN
+[0m14:03:58.354835 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:03:58.568872 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m14:03:58.570883 [debug] [MainThread]: Using postgres connection "master"
+[0m14:03:58.572882 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.3", "profile_name": "dbtlearn", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:03:58.633990 [debug] [MainThread]: SQL status: SELECT 3 in 0.0 seconds
+[0m14:03:58.641066 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a999e460-d347-464b-b485-6dbbe4f46da3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1F1CEB10>]}
+[0m14:03:58.643034 [debug] [MainThread]: On master: ROLLBACK
+[0m14:03:58.676086 [debug] [MainThread]: On master: Close
+[0m14:03:58.679083 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:03:58.682082 [info ] [MainThread]: 
+[0m14:03:58.699079 [debug] [Thread-1 (]: Began running node model.dbtlearn.src_hosts
+[0m14:03:58.755400 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbtlearn.src_hosts'
+[0m14:03:58.758481 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.src_hosts
+[0m14:03:58.784248 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.src_hosts"
+[0m14:03:58.791216 [debug] [Thread-1 (]: Timing info for model.dbtlearn.src_hosts (compile): 14:03:58.760516 => 14:03:58.789215
+[0m14:03:58.795343 [debug] [Thread-1 (]: Began executing node model.dbtlearn.src_hosts
+[0m14:03:58.797343 [debug] [Thread-1 (]: Timing info for model.dbtlearn.src_hosts (execute): 14:03:58.796341 => 14:03:58.796341
+[0m14:03:58.800342 [debug] [Thread-1 (]: Finished running node model.dbtlearn.src_hosts
+[0m14:03:58.801342 [debug] [Thread-1 (]: Began running node model.dbtlearn.src_listings
+[0m14:03:58.802344 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.src_hosts, now model.dbtlearn.src_listings)
+[0m14:03:58.803342 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.src_listings
+[0m14:03:58.808399 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.src_listings"
+[0m14:03:58.811401 [debug] [Thread-1 (]: Timing info for model.dbtlearn.src_listings (compile): 14:03:58.805386 => 14:03:58.810399
+[0m14:03:58.813399 [debug] [Thread-1 (]: Began executing node model.dbtlearn.src_listings
+[0m14:03:58.814398 [debug] [Thread-1 (]: Timing info for model.dbtlearn.src_listings (execute): 14:03:58.814398 => 14:03:58.814398
+[0m14:03:58.815397 [debug] [Thread-1 (]: Finished running node model.dbtlearn.src_listings
+[0m14:03:58.818439 [debug] [Thread-1 (]: Began running node model.dbtlearn.src_reviews
+[0m14:03:58.821439 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.src_listings, now model.dbtlearn.src_reviews)
+[0m14:03:58.822438 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.src_reviews
+[0m14:03:58.827440 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.src_reviews"
+[0m14:03:58.830394 [debug] [Thread-1 (]: Timing info for model.dbtlearn.src_reviews (compile): 14:03:58.822438 => 14:03:58.830394
+[0m14:03:58.832397 [debug] [Thread-1 (]: Began executing node model.dbtlearn.src_reviews
+[0m14:03:58.834395 [debug] [Thread-1 (]: Timing info for model.dbtlearn.src_reviews (execute): 14:03:58.833406 => 14:03:58.833406
+[0m14:03:58.836394 [debug] [Thread-1 (]: Finished running node model.dbtlearn.src_reviews
+[0m14:03:58.838395 [debug] [Thread-1 (]: Began running node seed.dbtlearn.seed_full_moon_dates
+[0m14:03:58.840951 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.src_reviews, now seed.dbtlearn.seed_full_moon_dates)
+[0m14:03:58.841492 [debug] [Thread-1 (]: Began compiling node seed.dbtlearn.seed_full_moon_dates
+[0m14:03:58.847022 [debug] [Thread-1 (]: Timing info for seed.dbtlearn.seed_full_moon_dates (compile): 14:03:58.842498 => 14:03:58.846018
+[0m14:03:58.848018 [debug] [Thread-1 (]: Began executing node seed.dbtlearn.seed_full_moon_dates
+[0m14:03:58.849020 [debug] [Thread-1 (]: Timing info for seed.dbtlearn.seed_full_moon_dates (execute): 14:03:58.849020 => 14:03:58.849020
+[0m14:03:58.851021 [debug] [Thread-1 (]: Finished running node seed.dbtlearn.seed_full_moon_dates
+[0m14:03:58.852016 [debug] [Thread-1 (]: Began running node model.dbtlearn.dim_hosts_cleansed
+[0m14:03:58.854449 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.dbtlearn.seed_full_moon_dates, now model.dbtlearn.dim_hosts_cleansed)
+[0m14:03:58.855489 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.dim_hosts_cleansed
+[0m14:03:58.860486 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.dim_hosts_cleansed"
+[0m14:03:58.862487 [debug] [Thread-1 (]: Timing info for model.dbtlearn.dim_hosts_cleansed (compile): 14:03:58.856487 => 14:03:58.862487
+[0m14:03:58.863486 [debug] [Thread-1 (]: Began executing node model.dbtlearn.dim_hosts_cleansed
+[0m14:03:58.863486 [debug] [Thread-1 (]: Timing info for model.dbtlearn.dim_hosts_cleansed (execute): 14:03:58.863486 => 14:03:58.863486
+[0m14:03:58.867516 [debug] [Thread-1 (]: Finished running node model.dbtlearn.dim_hosts_cleansed
+[0m14:03:58.868523 [debug] [Thread-1 (]: Began running node model.dbtlearn.dim_listings_cleansed
+[0m14:03:58.870517 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.dim_hosts_cleansed, now model.dbtlearn.dim_listings_cleansed)
+[0m14:03:58.870517 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.dim_listings_cleansed
+[0m14:03:58.875519 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.dim_listings_cleansed"
+[0m14:03:58.878552 [debug] [Thread-1 (]: Timing info for model.dbtlearn.dim_listings_cleansed (compile): 14:03:58.871517 => 14:03:58.878089
+[0m14:03:58.879554 [debug] [Thread-1 (]: Began executing node model.dbtlearn.dim_listings_cleansed
+[0m14:03:58.881580 [debug] [Thread-1 (]: Timing info for model.dbtlearn.dim_listings_cleansed (execute): 14:03:58.880553 => 14:03:58.880553
+[0m14:03:58.883550 [debug] [Thread-1 (]: Finished running node model.dbtlearn.dim_listings_cleansed
+[0m14:03:58.885550 [debug] [Thread-1 (]: Began running node model.dbtlearn.fact_reviews
+[0m14:03:58.890777 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.dim_listings_cleansed, now model.dbtlearn.fact_reviews)
+[0m14:03:58.892296 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.fact_reviews
+[0m14:03:58.911309 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.fact_reviews"
+[0m14:03:58.913933 [debug] [Thread-1 (]: Timing info for model.dbtlearn.fact_reviews (compile): 14:03:58.893305 => 14:03:58.912819
+[0m14:03:58.914318 [debug] [Thread-1 (]: Began executing node model.dbtlearn.fact_reviews
+[0m14:03:58.916336 [debug] [Thread-1 (]: Timing info for model.dbtlearn.fact_reviews (execute): 14:03:58.915319 => 14:03:58.915319
+[0m14:03:58.918316 [debug] [Thread-1 (]: Finished running node model.dbtlearn.fact_reviews
+[0m14:03:58.919315 [debug] [Thread-1 (]: Began running node model.dbtlearn.dim_listings_with_hosts
+[0m14:03:58.920315 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.fact_reviews, now model.dbtlearn.dim_listings_with_hosts)
+[0m14:03:58.922317 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.dim_listings_with_hosts
+[0m14:03:58.930379 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.dim_listings_with_hosts"
+[0m14:03:58.932364 [debug] [Thread-1 (]: Timing info for model.dbtlearn.dim_listings_with_hosts (compile): 14:03:58.923326 => 14:03:58.932364
+[0m14:03:58.933364 [debug] [Thread-1 (]: Began executing node model.dbtlearn.dim_listings_with_hosts
+[0m14:03:58.934364 [debug] [Thread-1 (]: Timing info for model.dbtlearn.dim_listings_with_hosts (execute): 14:03:58.934364 => 14:03:58.934364
+[0m14:03:58.937451 [debug] [Thread-1 (]: Finished running node model.dbtlearn.dim_listings_with_hosts
+[0m14:03:58.939018 [debug] [Thread-1 (]: Began running node model.dbtlearn.mart_fullmoon_reviews
+[0m14:03:58.940027 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbtlearn.dim_listings_with_hosts, now model.dbtlearn.mart_fullmoon_reviews)
+[0m14:03:58.941026 [debug] [Thread-1 (]: Began compiling node model.dbtlearn.mart_fullmoon_reviews
+[0m14:03:58.946051 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbtlearn.mart_fullmoon_reviews"
+[0m14:03:58.949559 [debug] [Thread-1 (]: Timing info for model.dbtlearn.mart_fullmoon_reviews (compile): 14:03:58.942028 => 14:03:58.948052
+[0m14:03:58.951605 [debug] [Thread-1 (]: Began executing node model.dbtlearn.mart_fullmoon_reviews
+[0m14:03:58.953566 [debug] [Thread-1 (]: Timing info for model.dbtlearn.mart_fullmoon_reviews (execute): 14:03:58.952572 => 14:03:58.952572
+[0m14:03:58.955571 [debug] [Thread-1 (]: Finished running node model.dbtlearn.mart_fullmoon_reviews
+[0m14:03:58.958579 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:03:58.959570 [debug] [MainThread]: Connection 'list_inttegra_stage_test' was properly closed.
+[0m14:03:58.959570 [debug] [MainThread]: Connection 'model.dbtlearn.mart_fullmoon_reviews' was properly closed.
+[0m14:03:58.963611 [debug] [MainThread]: Command end result
+[0m14:03:58.986706 [debug] [MainThread]: Command `dbt compile` succeeded at 14:03:58.985689 after 2.83 seconds
+[0m14:03:58.987699 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E17741010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E1EB0B010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021E17785A10>]}
+[0m14:03:58.988704 [debug] [MainThread]: Flushing usage events
+[0m14:30:28.898101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B6C15150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B64050D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B67B6850>]}
+
+
+============================== 14:30:28.898101 | 0c406270-213f-4b28-a3d9-30f909955738 ==============================
+[0m14:30:28.898101 [info ] [MainThread]: Running with dbt=1.7.3
+[0m14:30:28.898101 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\marco\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\marco\\OneDrive\\Documentos\\triade\\dbt_course_1\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt source freshness', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:30:29.137943 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0c406270-213f-4b28-a3d9-30f909955738', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B64568D0>]}
+[0m14:30:29.230447 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0c406270-213f-4b28-a3d9-30f909955738', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B64DB050>]}
+[0m14:30:29.230447 [info ] [MainThread]: Registered adapter: postgres=1.7.3
+[0m14:30:29.239170 [debug] [MainThread]: checksum: c95636796e12235e48c0560a0bb6a50e98827ef72e7ea1fe07a97c38c91661e1, vars: {}, profile: , target: , version: 1.7.3
+[0m14:30:29.331136 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:30:29.331136 [debug] [MainThread]: Partial parsing: updated file: dbtlearn://dbtlearn/models\sources.yml
+[0m14:30:29.643904 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0c406270-213f-4b28-a3d9-30f909955738', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B700F210>]}
+[0m14:30:29.660196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0c406270-213f-4b28-a3d9-30f909955738', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B700EE50>]}
+[0m14:30:29.660196 [info ] [MainThread]: Found 1 seed, 8 models, 3 sources, 0 exposures, 0 metrics, 401 macros, 0 groups, 0 semantic models
+[0m14:30:29.660196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0c406270-213f-4b28-a3d9-30f909955738', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B6C4E8D0>]}
+[0m14:30:29.660196 [info ] [MainThread]: 
+[0m14:30:29.667174 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:30:29.671191 [debug] [ThreadPool]: Acquiring new postgres connection 'list_inttegra_stage_test'
+[0m14:30:29.702917 [debug] [ThreadPool]: Using postgres connection "list_inttegra_stage_test"
+[0m14:30:29.704056 [debug] [ThreadPool]: On list_inttegra_stage_test: BEGIN
+[0m14:30:29.705935 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:30:30.004653 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m14:30:30.004653 [debug] [ThreadPool]: Using postgres connection "list_inttegra_stage_test"
+[0m14:30:30.004653 [debug] [ThreadPool]: On list_inttegra_stage_test: /* {"app": "dbt", "dbt_version": "1.7.3", "profile_name": "dbtlearn", "target_name": "dev", "connection_name": "list_inttegra_stage_test"} */
+select
+      'inttegra_stage' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'test'
+    union all
+    select
+      'inttegra_stage' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'test'
+    union all
+    select
+      'inttegra_stage' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'test'
+  
+[0m14:30:30.052812 [debug] [ThreadPool]: SQL status: SELECT 12 in 0.0 seconds
+[0m14:30:30.052812 [debug] [ThreadPool]: On list_inttegra_stage_test: ROLLBACK
+[0m14:30:30.087211 [debug] [ThreadPool]: On list_inttegra_stage_test: Close
+[0m14:30:30.092747 [debug] [MainThread]: Using postgres connection "master"
+[0m14:30:30.094487 [debug] [MainThread]: On master: BEGIN
+[0m14:30:30.094487 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:30:30.296635 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m14:30:30.296635 [debug] [MainThread]: Using postgres connection "master"
+[0m14:30:30.296635 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.3", "profile_name": "dbtlearn", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m14:30:30.358956 [debug] [MainThread]: SQL status: SELECT 3 in 0.0 seconds
+[0m14:30:30.363645 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0c406270-213f-4b28-a3d9-30f909955738', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B6457990>]}
+[0m14:30:30.363645 [debug] [MainThread]: On master: ROLLBACK
+[0m14:30:30.393786 [debug] [MainThread]: On master: Close
+[0m14:30:30.393786 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:30:30.393786 [info ] [MainThread]: 
+[0m14:30:30.400738 [debug] [Thread-1 (]: Began running node source.dbtlearn.airbnb.reviews
+[0m14:30:30.400738 [info ] [Thread-1 (]: 1 of 1 START freshness of airbnb.reviews ....................................... [RUN]
+[0m14:30:30.400738 [debug] [Thread-1 (]: Acquiring new postgres connection 'source.dbtlearn.airbnb.reviews'
+[0m14:30:30.407209 [debug] [Thread-1 (]: Began compiling node source.dbtlearn.airbnb.reviews
+[0m14:30:30.408222 [debug] [Thread-1 (]: Timing info for source.dbtlearn.airbnb.reviews (compile): 14:30:30.408222 => 14:30:30.408222
+[0m14:30:30.409217 [debug] [Thread-1 (]: Began executing node source.dbtlearn.airbnb.reviews
+[0m14:30:30.410217 [debug] [Thread-1 (]: Using postgres connection "source.dbtlearn.airbnb.reviews"
+[0m14:30:30.410217 [debug] [Thread-1 (]: On source.dbtlearn.airbnb.reviews: BEGIN
+[0m14:30:30.412259 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m14:30:30.596121 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m14:30:30.596121 [debug] [Thread-1 (]: On source.dbtlearn.airbnb.reviews: COMMIT
+[0m14:30:30.596121 [debug] [Thread-1 (]: Using postgres connection "source.dbtlearn.airbnb.reviews"
+[0m14:30:30.596121 [debug] [Thread-1 (]: On source.dbtlearn.airbnb.reviews: COMMIT
+[0m14:30:30.628063 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m14:30:30.628063 [debug] [Thread-1 (]: Using postgres connection "source.dbtlearn.airbnb.reviews"
+[0m14:30:30.628063 [debug] [Thread-1 (]: On source.dbtlearn.airbnb.reviews: /* {"app": "dbt", "dbt_version": "1.7.3", "profile_name": "dbtlearn", "target_name": "dev", "node_id": "source.dbtlearn.airbnb.reviews"} */
+select
+      max(date) as max_loaded_at,
+      now() as snapshotted_at
+    from "inttegra_stage"."test"."raw_reviews"
+    
+  
+[0m14:30:30.904680 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.0 seconds
+[0m14:30:30.905782 [debug] [Thread-1 (]: On source.dbtlearn.airbnb.reviews: Close
+[0m14:30:30.905782 [debug] [Thread-1 (]: Timing info for source.dbtlearn.airbnb.reviews (execute): 14:30:30.409217 => 14:30:30.905782
+[0m14:30:30.910685 [error] [Thread-1 (]: 1 of 1 ERROR STALE freshness of airbnb.reviews ................................. [[31mERROR STALE[0m in 0.51s]
+[0m14:30:30.910685 [debug] [Thread-1 (]: Finished running node source.dbtlearn.airbnb.reviews
+[0m14:30:30.910685 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:30:30.910685 [debug] [MainThread]: Connection 'list_inttegra_stage_test' was properly closed.
+[0m14:30:30.910685 [debug] [MainThread]: Connection 'source.dbtlearn.airbnb.reviews' was properly closed.
+[0m14:30:30.927546 [info ] [MainThread]: 
+[0m14:30:30.929125 [info ] [MainThread]: Done.
+[0m14:30:30.932787 [debug] [MainThread]: Command `dbt source freshness` failed at 14:30:30.932068 after 2.11 seconds
+[0m14:30:30.934074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B67B6850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B3851190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1B6CF7510>]}
+[0m14:30:30.934735 [debug] [MainThread]: Flushing usage events
