@@ -12,3 +12,9 @@ FROM
     src_reviews
 WHERE
     review_txt IS NOT NULL
+
+    AND review_date > (SELECT 
+                           MAX(review_date)
+                       FROM
+                           "inttegra_stage"."test"."fact_reviews"        
+    )

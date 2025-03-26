@@ -17,6 +17,7 @@ test-paths: ["dbtlearn/tests"]
 seed-paths: ["dbtlearn/seeds"]
 macro-paths: ["dbtlearn/macros"]
 snapshot-paths: ["dbtlearn/snapshots"]
+asset-paths: ["dbtlearn/assets"]
 
 clean-targets:         # directories to be removed by `dbt clean`
   - "target"
