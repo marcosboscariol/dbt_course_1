@@ -1,29 +1,9 @@
 
-      
-  
-    
+      insert into "inttegra_stage"."test"."fact_reviews" ("review_id", "listing_id", "review_date", "reviewer_name", "review_txt", "review_sentiment")
+    (
+        select "review_id", "listing_id", "review_date", "reviewer_name", "review_txt", "review_sentiment"
+        from "fact_reviews__dbt_tmp102814839061"
+    )
 
-  create  table "inttegra_stage"."test"."fact_reviews__dbt_tmp"
-  
-  
-    as
-  
-  (
-    
-WITH src_reviews AS (
-    SELECT
-        *
-    FROM
-        "inttegra_stage"."test"."src_reviews"
-)
-SELECT
-    md5(cast(coalesce(cast(listing_id as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(review_date as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(reviewer_name as TEXT), '_dbt_utils_surrogate_key_null_') || '-' || coalesce(cast(review_txt as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as review_id,
-    *
-FROM
-    src_reviews
-WHERE
-    review_txt IS NOT NULL
 
-  );
-  
   
